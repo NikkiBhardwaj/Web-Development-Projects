@@ -1,0 +1,70 @@
+body{
+    display:flex;
+    justify-content:center;
+    height:100vh;
+    align-items: center;
+    margin:0;
+    font-family:'Courier New', Courier, monospace;
+}
+.password-container{
+    background-color: antiquewhite;
+    padding:20px;
+    width:600px;
+    height:200px;
+    border-radius: 10px;
+    border:solid 1px black;
+    box-shadow:2px 2px 3px 5px red;
+    
+}
+.input-container{
+border:solid black;
+border-radius:10px;
+padding:10px;
+background-color: blueviolet;
+display: flex;
+justify-content: space-between;
+font-size:25px;
+}
+.input{
+border:none;
+outline:none;
+color:aliceblue;
+
+background-color:transparent;
+}
+.fa-copy{
+    cursor:pointer;
+    opacity:3.5;
+}
+.fa-copy{
+    opacity:7;
+}
+.btn{
+    margin:10px;
+    padding:10px 20px;
+    background-color: black;
+    color:aliceblue;
+    border:solid 10px black;
+    border-radius:20px;
+}
+.btn:active{
+    transform:scale(0.5);
+}
+.alert-container{
+    background-color: blue;
+    width:200px;
+    height:70px;
+    border:solid 2px black;
+    border-radius:10px;
+    position:fixed;
+    bottom:20px;
+    right:20px;
+ display:flex;
+justify-content:center;
+align-items: center;
+ box-shadow:2px 2px 3px 5px red;
+ transition: right 0.4s ease;
+}
+.alert-container.active{
+    right:-300px;
+}
