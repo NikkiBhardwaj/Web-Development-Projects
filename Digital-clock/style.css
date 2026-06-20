@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height:100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("clock.jpg");
+    width: 100%;
+    background-position: no-repeat;
+    background-size: cover;
+
+}
+.clock{
+    height: 4rem;
+    width: 20rem;
+    padding:1rem;
+    box-shadow: 5px 5px 6px violet, 5px 5px 6px violet inset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30%;
+    font-weight: 700;
+    background-color: blanchedalmond;
+}
+#time{
+    font-size: 3.5rem;
+    font-weight: 700;
+}
+#time-format{
+    position: relative;
+    top: -14%;
+    margin: 5px;
+    font-weight: 500;
+}
+
