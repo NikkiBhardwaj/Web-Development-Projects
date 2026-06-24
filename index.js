@@ -1,46 +1,61 @@
-const birthdayE1 = document.getElementById("birthday");
-const btnE1 = document.getElementById("btn");
-const resultE1 = document.getElementById("result");
+# index.js
 
-function calculateAge() {
+```javascript
+const btnE1 = document.querySelector(".btn");
+const inputE1 = document.getElementById("input");
+const copyIconE1 = document.querySelector(".fa-copy");
+const alertContainerE1 = document.querySelector(".alert-container");
 
-    const birthdayValue = birthdayE1.value;
+btnE1.addEventListener("click", createPassword);
 
-    if (birthdayValue === "") {
-        alert("Please enter your birthdate");
+copyIconE1.addEventListener("click", () => {
+
+    if (!inputE1.value) {
         return;
     }
 
-    const age = ageCalculate(birthdayValue);
+    copyPassword();
 
-    resultE1.innerText =
-        `Your age is ${age} ${age > 1 ? "years" : "year"} old`;
-}
+    alertContainerE1.classList.remove("active");
 
-function ageCalculate(birthdayValue) {
+    setTimeout(() => {
+        alertContainerE1.classList.add("active");
+    }, 2000);
 
-    const currentDate = new Date();
-    const birthDate = new Date(birthdayValue);
+});
 
-    let age =
-        currentDate.getFullYear() -
-        birthDate.getFullYear();
+function createPassword() {
 
-    const monthDifference =
-        currentDate.getMonth() -
-        birthDate.getMonth();
+    const chars =
+        "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()";
 
-    if (
-        monthDifference < 0 ||
-        (
-            monthDifference === 0 &&
-            currentDate.getDate() < birthDate.getDate()
-        )
-    ) {
-        age--;
+    const passwordLength = 14;
+
+    let password = "";
+
+    for (let i = 0; i < passwordLength; i++) {
+
+        const randomNum =
+            Math.floor(Math.random() * chars.length);
+
+        password += chars[randomNum];
     }
 
-    return age;
+    inputE1.value = password;
 }
 
-btnE1.addEventListener("click", calculateAge);
+function copyPassword() {
+
+    inputE1.select();
+
+    inputE1.setSelectionRange(0, 9999);
+
+    navigator.clipboard.writeText(inputE1.value)
+        .then(() => {
+            console.log("Password Copied");
+        })
+        .catch(() => {
+            console.log("Copy Failed");
+        });
+}
+```
