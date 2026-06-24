@@ -1,70 +1,103 @@
+# style.css
+
+```css
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
 body{
     display:flex;
     justify-content:center;
+    align-items:center;
     height:100vh;
-    align-items: center;
-    margin:0;
     font-family:'Courier New', Courier, monospace;
+    background-color:#f4f4f4;
 }
-.password-container{
-    background-color: antiquewhite;
-    padding:20px;
-    width:600px;
-    height:200px;
-    border-radius: 10px;
-    border:solid 1px black;
-    box-shadow:2px 2px 3px 5px red;
-    
-}
-.input-container{
-border:solid black;
-border-radius:10px;
-padding:10px;
-background-color: blueviolet;
-display: flex;
-justify-content: space-between;
-font-size:25px;
-}
-.input{
-border:none;
-outline:none;
-color:aliceblue;
 
-background-color:transparent;
+.password-container{
+    background-color:antiquewhite;
+    padding:20px;
+    width:90%;
+    max-width:600px;
+    border-radius:10px;
+    border:1px solid black;
+    box-shadow:2px 2px 8px rgba(0,0,0,0.3);
 }
+
+.password-container h2{
+    margin-bottom:20px;
+}
+
+.input-container{
+    border:1px solid black;
+    border-radius:10px;
+    padding:10px;
+    background-color:blueviolet;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.input{
+    border:none;
+    outline:none;
+    background:transparent;
+    color:white;
+    width:100%;
+    font-size:18px;
+}
+
+.input::placeholder{
+    color:white;
+}
+
 .fa-copy{
     cursor:pointer;
-    opacity:3.5;
+    opacity:0.7;
+    transition:0.3s;
 }
-.fa-copy{
-    opacity:7;
+
+.fa-copy:hover{
+    opacity:1;
 }
+
 .btn{
-    margin:10px;
+    margin-top:15px;
     padding:10px 20px;
-    background-color: black;
-    color:aliceblue;
-    border:solid 10px black;
+    background:black;
+    color:white;
+    border:none;
     border-radius:20px;
+    cursor:pointer;
 }
+
+.btn:hover{
+    opacity:0.9;
+}
+
 .btn:active{
-    transform:scale(0.5);
+    transform:scale(0.95);
 }
+
 .alert-container{
-    background-color: blue;
-    width:200px;
-    height:70px;
-    border:solid 2px black;
+    background-color:blue;
+    color:white;
+    width:220px;
+    height:60px;
     border-radius:10px;
     position:fixed;
     bottom:20px;
     right:20px;
- display:flex;
-justify-content:center;
-align-items: center;
- box-shadow:2px 2px 3px 5px red;
- transition: right 0.4s ease;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    box-shadow:2px 2px 8px rgba(0,0,0,0.3);
+    transition:right 0.4s ease;
 }
+
 .alert-container.active{
     right:-300px;
 }
+```
