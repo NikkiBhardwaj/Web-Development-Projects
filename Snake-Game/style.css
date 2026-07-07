@@ -98,3 +98,6 @@ section .info{
 .fill{
     background-color: var(--bg-fill-color);
 }
+.food{
+    background-color: yellow;
+}
